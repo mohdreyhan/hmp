@@ -53,6 +53,7 @@ function LogIn() {
         password,
       });
       const token = res.data.token;
+      console.log("locastorage", token);
       const { name, role } = jwt(token);
 
       dispatch({ type: "LOG_IN", payload: { token, name, role } });
