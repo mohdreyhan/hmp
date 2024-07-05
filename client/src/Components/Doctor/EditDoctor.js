@@ -23,7 +23,9 @@ const EditDoctor = (props) => {
       } = await axiosInstance.get(`/doctor/${id}`);
       setDoctor(doctor);
     };
-    getData();
+    if (id) {
+      getData();
+    }
   }, [id]);
   return (
     <>
@@ -53,9 +55,7 @@ const EditDoctor = (props) => {
                 type="email"
                 name="docname"
                 value={doctor.email}
-                onChange={(e) =>
-                  setDoctor({ ...doctor, email: e.target.value })
-                }
+                onChange={(e) => setDoctor({ ...doctor, email: e.target.value })}
               />
             </Col>
           </Row>
@@ -85,9 +85,7 @@ const EditDoctor = (props) => {
                 type="phone"
                 name="docname"
                 value={doctor.phone}
-                onChange={(e) =>
-                  setDoctor({ ...doctor, phone: e.target.value })
-                }
+                onChange={(e) => setDoctor({ ...doctor, phone: e.target.value })}
               />
             </Col>
           </Row>
@@ -102,9 +100,7 @@ const EditDoctor = (props) => {
                 type="text"
                 name="docname"
                 value={doctor.department}
-                onChange={(e) =>
-                  setDoctor({ ...doctor, department: e.target.value })
-                }
+                onChange={(e) => setDoctor({ ...doctor, department: e.target.value })}
               />
             </Col>
           </Row>

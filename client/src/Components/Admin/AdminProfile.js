@@ -26,8 +26,9 @@ function AdminProfile() {
         console.log(res.data.error);
       }
     };
-
-    getProfile();
+    if (_id) {
+      getProfile();
+    }
   }, []);
   const handleSubmit = async () => {
     await axiosInstance.patch(`/admin/${_id}`, { ...adminDetails });
@@ -179,10 +180,7 @@ function AdminProfile() {
             <FormGroup>
               <Row mt="3">
                 <Col sm="12">
-                  <Button
-                    color="primary"
-                    onClick={() => setShowChangePassword(true)}
-                  >
+                  <Button color="primary" onClick={() => setShowChangePassword(true)}>
                     Change Password?
                   </Button>
                 </Col>

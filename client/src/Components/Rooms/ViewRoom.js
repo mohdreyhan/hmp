@@ -17,7 +17,9 @@ const ViewRoom = () => {
 
       setPatients(room);
     };
-    getData();
+    if (id) {
+      getData();
+    }
   }, [id]);
   return (
     <div>
@@ -45,9 +47,7 @@ const ViewRoom = () => {
               .filter((doctor, index) => {
                 if (search === "") {
                   return doctor;
-                } else if (
-                  doctor.name.toLowerCase().includes(search.toLowerCase())
-                ) {
+                } else if (doctor.name.toLowerCase().includes(search.toLowerCase())) {
                   return doctor;
                 }
               })

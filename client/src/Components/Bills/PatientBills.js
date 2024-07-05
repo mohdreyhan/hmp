@@ -5,11 +5,13 @@ import { Button, Col, Row, Table } from "reactstrap";
 import moment from "moment";
 import { useHistory } from "react-router-dom";
 import Loader from "../Loader";
+
 const PatientBills = () => {
   const { _id: patientId } = jwt(localStorage.getItem("token"));
   const [bills, setBills] = useState([]);
   const [loading, setLoading] = useState(true);
   const history = useHistory();
+
   useEffect(() => {
     if (localStorage.getItem("token") === null) {
       history.push("/login");
@@ -24,9 +26,11 @@ const PatientBills = () => {
     };
     getData();
   }, []);
+
   if (loading) {
     return <Loader />;
   }
+
   return (
     <Row>
       <Col className="mt-2 mr-5" sm="3" />

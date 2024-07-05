@@ -7,6 +7,7 @@ const EditRoom = () => {
   const [roomData, setRoomData] = useState();
   const { id } = useParams();
   const history = useHistory();
+  
   useEffect(() => {
     const getData = async () => {
       const {
@@ -14,7 +15,9 @@ const EditRoom = () => {
       } = await axiosInstance.get(`/room/details/${id}`);
       setRoomData(room);
     };
-    getData();
+    if (id) {
+      getData();
+    }
   }, []);
 
   const handleSubmit = async (e) => {
@@ -38,9 +41,7 @@ const EditRoom = () => {
                 type="text"
                 name="room_no"
                 value={roomData?.room_no}
-                onChange={(e) =>
-                  setRoomData({ ...roomData, room_no: e.target.value })
-                }
+                onChange={(e) => setRoomData({ ...roomData, room_no: e.target.value })}
               />
             </Col>
           </Row>
@@ -55,9 +56,7 @@ const EditRoom = () => {
                 type="number"
                 name="cost_per_day"
                 value={roomData?.cost_per_day}
-                onChange={(e) =>
-                  setRoomData({ ...roomData, cost_per_day: e.target.value })
-                }
+                onChange={(e) => setRoomData({ ...roomData, cost_per_day: e.target.value })}
               />
             </Col>
           </Row>
@@ -72,9 +71,7 @@ const EditRoom = () => {
                 type="number"
                 name="no_of_beds"
                 value={roomData?.no_of_beds}
-                onChange={(e) =>
-                  setRoomData({ ...roomData, no_of_beds: e.target.value })
-                }
+                onChange={(e) => setRoomData({ ...roomData, no_of_beds: e.target.value })}
               />
             </Col>
           </Row>

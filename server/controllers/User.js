@@ -25,8 +25,8 @@ const Login = async (req, res, next) => {
   const isCorrect = await user.checkPassword(password);
 
   if (isCorrect) {
-    console.log("user----->", user);
-    const token = jwt.sign({ email: email, name: user.name, role: role }, "qwerty12345", { algorithm: "HS256" });
+    user.role = role
+    const token = jwt.sign({ email: email, name: user.name, role: role, _id: user._id }, "qwerty12345", { algorithm: "HS256" });
     res.status(StatusCodes.OK).json({ token });
   } else {
     res.status(StatusCodes.UNAUTHORIZED).json({ error: "Incorrect password" });

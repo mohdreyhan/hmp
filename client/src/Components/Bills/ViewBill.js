@@ -4,9 +4,11 @@ import axiosInstance from "../../utils/axiosInstance";
 import { Col, Row, Table } from "reactstrap";
 import moment from "moment";
 import _ from "lodash";
+
 function ViewBill() {
   const { billId } = useParams();
   const [bill, setBill] = useState();
+
   const formatBill = (bill) => {
     const formatedBill = {};
     if (bill !== null && bill !== undefined) {
@@ -15,11 +17,8 @@ function ViewBill() {
           formatedBill.doctor_name = bill[key]["doctor_id"]["name"];
           formatedBill.doctor_fee = bill[key]["doctor_id"]["fee"];
           formatedBill.insurance_name = bill[key]["insurance_id"]["name"];
-          formatedBill.insurance_percentage =
-            bill[key]["insurance_id"]["percentage"];
-          formatedBill.admit_date = moment(bill[key].admit_date).format(
-            "YYYY-MM-DD"
-          );
+          formatedBill.insurance_percentage = bill[key]["insurance_id"]["percentage"];
+          formatedBill.admit_date = moment(bill[key].admit_date).format("YYYY-MM-DD");
           formatedBill.treatments = bill[key].treatments;
         } else if (key === "patient_id") {
           formatedBill.patient_name = bill[key].name;
@@ -35,6 +34,7 @@ function ViewBill() {
     }
     return formatedBill;
   };
+
   useEffect(() => {
     const getData = async () => {
       const {
@@ -45,8 +45,11 @@ function ViewBill() {
         setBill(_.omit(formatedBill, ["_id"]));
       }
     };
-    getData();
+    if (billId) {
+      getData();
+    }
   }, []);
+
   if (!bill) {
     return <></>;
   }
