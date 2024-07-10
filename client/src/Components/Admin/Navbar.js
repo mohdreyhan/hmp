@@ -16,16 +16,22 @@ import {
   NavbarToggler,
   NavItem,
 } from "reactstrap";
+
 function NavBar() {
+
   const [isOpen, setOpen] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
+
   const Logout = () => {
     dispatch({ type: "LOG_OUT" });
     history.push("/");
   };
+
   const { role } = jwtDecode(localStorage.getItem("token"));
+  
   console.log(role);
+
   if (role === "patient") {
     return (
       <div>
@@ -175,7 +181,7 @@ function NavBar() {
                 </span>
               </NavLink>
             </NavItem>
-            <NavItem className="mynav">
+            {/* <NavItem className="mynav">
               <NavLink activeStyle={{ color: "#61dafb" }} to="/carriers">
                 <span>
                   <GiTwoCoins
@@ -184,7 +190,7 @@ function NavBar() {
                   Insurance Carriers
                 </span>
               </NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem className="mynav">
               <NavLink activeStyle={{ color: "#61dafb" }} to="/admin/profile">
                 <span>

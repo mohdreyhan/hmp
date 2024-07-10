@@ -37,6 +37,7 @@ import EditRoom from "./Components/Rooms/EditRoom";
 import AdmittedPatients from "./Components/Patient/AdmittedPatients";
 import DoctorProfile from "./Components/Doctor/Profile";
 import PreviousPatients from "./Components/Doctor/PreviousPatients";
+
 function App() {
   const location = useLocation();
   return (

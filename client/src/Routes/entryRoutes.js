@@ -24,7 +24,7 @@ export default function EntryRoutes() {
 				<Row mt="7">
 					<LoginCard
 						src={doctor_login}
-						msg="Welcome to Global Hospitals"
+						msg="Welcome to Lambton Hospitals"
 					/>
 					<Col>
 						<h1>Sign Up</h1>

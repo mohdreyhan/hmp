@@ -15,7 +15,7 @@ function Home() {
             color: "white",
           }}
         >
-          Global Hospitals
+          Lambton Hospitals
         </HomeItem>
         <HomeItem
           style={{
@@ -27,8 +27,10 @@ function Home() {
       </HomeContainer>
       <HomeBody>
         <Card role="admin" src={admin} link="/adminLogin" />
-        <Card role="doctor" src={doctor} link="/doctor" />
-        <Card role="patient" src={patient} link="patientLogin" />
+        <Card role="doctor" src={doctor} 
+        // link="/doctor"
+         />
+        {/* <Card role="patient" src={patient} link="patientLogin" /> */}
       </HomeBody>
     </>
   );

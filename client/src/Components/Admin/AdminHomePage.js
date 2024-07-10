@@ -6,9 +6,12 @@ import GetDepartment from "../Department/getDepartment";
 import FeedBack from "../Feedback";
 import Header from "../header";
 import Patients from "../Patient/Patients";
+
 function AdminHomePage() {
+
   const name = useSelector((state) => state.login.name);
   const { pagename } = useParams();
+
   const getPage = () => {
     switch (pagename) {
       case "addDepartment":
@@ -27,6 +30,7 @@ function AdminHomePage() {
         return <h1>Page Not Found</h1>;
     }
   };
+  
   return (
     <div>
       <Header msg={name} />

@@ -12,7 +12,7 @@ function Footer() {
 						<ul className="list-unstyled">
 							<li>
 								<FontAwesomeIcon icon={faPhone} />
-								+91 12345678 90
+								+1 12345678 90
 							</li>
 							<li>
 								<a
@@ -20,7 +20,7 @@ function Footer() {
 									style={{ color: "white" }}
 								>
 									<FontAwesomeIcon icon={faEnvelope} />{" "}
-									contact@global.com
+									contact@lambtonhospitals.com
 								</a>
 							</li>
 						</ul>
@@ -29,8 +29,8 @@ function Footer() {
 					<Col sm="12" md="4">
 						<h2>Address</h2>
 						<p>H.NO 123/456</p>
-						<p>Heaven street</p>
-						<p>London</p>
+						<p>Mississauga</p>
+						<p>Ontario, CA</p>
 					</Col>
 					<Col sm="12" md="4">
 						<SocialIcon
@@ -48,16 +48,16 @@ function Footer() {
 							url="https://linkedin.com"
 							fgColor="white"
 						/>
-						<SocialIcon
+						{/* <SocialIcon
 							style={{ margin: "5px" }}
-							url="https://github.com/sainikhil1605"
+							// url="https://github.com/sainikhil1605"
 							fgColor="white"
-						/>
+						/> */}
 					</Col>
 				</Row>
 				<Row>
 					<Col sm="12">
-						<p>©Copyright 2021 Global Hospitals</p>
+						<p>©Copyright 2024 Lambton Hospitals</p>
 					</Col>
 				</Row>
 			</Container>
