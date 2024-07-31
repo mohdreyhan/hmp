@@ -153,7 +153,7 @@ function Patients() {
               <Button
                 className="mt-3"
                 color="primary"
-                // onClick={() => history.push("/admittedPatients")}
+                onClick={() => history.push("/admittedPatients")}
               >
                 View Admitted Patients
               </Button>
@@ -203,9 +203,9 @@ function Patients() {
                                     <Button
                                       id={patient._id}
                                       color="primary"
-                                      // onClick={(e) =>
-                                      //   history.push(`/admit/${e.target.id}`)
-                                      // }
+                                      onClick={(e) =>
+                                        history.push(`/admit/${e.target.id}`)
+                                      }
                                     >
                                       Discharge Patient
                                     </Button>
@@ -218,11 +218,11 @@ function Patients() {
                                     <Button
                                       color="primary"
                                       id={patient._id}
-                                      // onClick={(e) =>
-                                      //   history.push(
-                                      //     `/patient/edit/${e.target.id}`
-                                      //   )
-                                      // }
+                                      onClick={(e) =>
+                                        history.push(
+                                          `/patient/edit/${e.target.id}`
+                                        )
+                                      }
                                     >
                                       Edit Patient Details
                                     </Button>
@@ -231,9 +231,9 @@ function Patients() {
                                     <Button
                                       color="primary"
                                       id={patient._id}
-                                      // onClick={(e) =>
-                                      //   history.push(`/patient/${e.target.id}`)
-                                      // }
+                                      onClick={(e) =>
+                                        history.push(`/patient/${e.target.id}`)
+                                      }
                                     >
                                       View Bills/Details
                                     </Button>
@@ -242,9 +242,9 @@ function Patients() {
                                     <Button
                                       id={patient._id}
                                       color="primary"
-                                      // onClick={(e) =>
-                                      //   history.push(`/admit/${e.target.id}`)
-                                      // }
+                                      onClick={(e) =>
+                                        history.push(`/admit/${e.target.id}`)
+                                      }
                                     >
                                       Admit/Discharge Patient
                                     </Button>

@@ -52,6 +52,7 @@ const EditDoctor = (props) => {
             </Col>
             <Col sm="8">
               <Input
+                disabled={true}
                 type="email"
                 name="docname"
                 value={doctor.email}

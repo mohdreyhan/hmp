@@ -40,7 +40,7 @@ function Bills() {
           </tr>
         </thead>
         <tbody>
-          {/* {bills.map((bill, index) => {
+          {bills.map((bill, index) => {
             return (
               <tr>
                 <th scope="row">{index + 1}</th>
@@ -58,7 +58,7 @@ function Bills() {
                 </td>
               </tr>
             );
-          })} */}
+          })}
         </tbody>
       </Table>
     </Row>

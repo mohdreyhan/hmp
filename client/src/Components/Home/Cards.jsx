@@ -10,10 +10,16 @@ function Card({ role, src, link }) {
       <img width="50%" height="50%s" src={src} alt="Admin" />
       <h1>{role.toUpperCase()}</h1>
       <p>Click Below to Login</p>
-      <Button variant="contained" onClick={() => history.push("/login", role)}>Log In</Button>
+      <Button
+        variant="contained"
+        onClick={() => {
+          history.push("/login", role);
+        }}
+      >
+        Log In
+      </Button>
     </HomeCard>
   );
 }
 
 export default Card;
-

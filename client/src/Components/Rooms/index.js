@@ -62,9 +62,9 @@ const Rooms = () => {
                       color="primary"
                       style={{ width: "100%" }}
                       id={room._id}
-                      // onClick={(e) =>
-                      //   history.push(`/rooms/edit/${e.target.id}`)
-                      // }
+                      onClick={(e) =>
+                        history.push(`/rooms/edit/${e.target.id}`)
+                      }
                     >
                       Edit Room Details
                     </Button>

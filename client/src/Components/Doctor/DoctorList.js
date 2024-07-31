@@ -4,6 +4,7 @@ import { Button, Col, Input, Row, Table } from "reactstrap";
 import axiosInstance from "../../utils/axiosInstance";
 import Loader from "../Loader";
 import { useHistory, useLocation } from "react-router-dom";
+
 function DoctorList() {
   const [doctors, setDoctors] = useState([]);
   const [search, setSearch] = useState("");
@@ -11,6 +12,7 @@ function DoctorList() {
   const [loading, setLoading] = useState(true);
   const history = useHistory();
   const location = useLocation();
+
   useEffect(() => {
     const getData = async () => {
       setLoading(true);
@@ -22,13 +24,20 @@ function DoctorList() {
     };
     getData();
   }, []);
+
   const handleDelete = async (id) => {
     await axiosInstance.delete(`/doctor/${id}`);
-    location.reload();
+    setLoading(true);
+    const res = await axiosInstance.get("/doctor");
+    if (res.status === 200) {
+      setDoctors(res.data.doctors);
+      setLoading(false);
+    }
   };
   if (loading) {
     return <Loader />;
   }
+
   return (
     <div>
       <Row>
@@ -36,12 +45,7 @@ function DoctorList() {
           {" "}
         </Col>
         <Col className="mt-3">
-          <Input
-            style={{ width: "50%" }}
-            placeholder="Search..."
-            type="text"
-            onChange={(e) => setSearch(e.target.value)}
-          />
+          <Input style={{ width: "50%" }} placeholder="Search..." type="text" onChange={(e) => setSearch(e.target.value)} />
           <Table
             striped
             style={{
@@ -63,9 +67,7 @@ function DoctorList() {
                   .filter((doctor, index) => {
                     if (search === "") {
                       return doctor;
-                    } else if (
-                      doctor.name.toLowerCase().includes(search.toLowerCase())
-                    ) {
+                    } else if (doctor.name.toLowerCase().includes(search.toLowerCase())) {
                       return doctor;
                     }
                   })
@@ -77,23 +79,13 @@ function DoctorList() {
                         <td>{doctor.department}</td>
                         {role !== "admin" ? null : (
                           <>
-                            {/* <td>
-                              <Button
-                                id={doctor._id}
-                                color="danger"
-                                onClick={(e) => handleDelete(e.target.id)}
-                              >
+                            <td>
+                              <Button id={doctor._id} color="danger" onClick={(e) => handleDelete(e.target.id)}>
                                 Delete
                               </Button>
-                            </td> */}
+                            </td>
                             <td>
-                              <Button
-                                id={doctor._id}
-                                color="primary"
-                                onClick={(e) =>
-                                  history.push(`/doctor/${e.target.id}`)
-                                }
-                              >
+                              <Button id={doctor._id} color="primary" onClick={(e) => history.push(`/doctor/${e.target.id}`)}>
                                 Edit
                               </Button>
                             </td>
