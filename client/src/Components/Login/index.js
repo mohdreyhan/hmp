@@ -70,8 +70,6 @@ function LogIn() {
     }
   };
 
-  console.log(location);
-
   if (!location.state) {
     history.push("/");
     return null;

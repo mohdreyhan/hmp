@@ -7,31 +7,29 @@ import LoginNav from "../Components/LoginNav";
 import PatientLogin from "../Components/Patient/loginPatient";
 import doctor_login from "../assets/doctor_2.jpg";
 import SignUp from "../Components/Patient/signUp";
+
 export default function EntryRoutes() {
-	return (
-		<>
-			<Route path="/adminLogin">
-				<AdminWelcome />
-			</Route>
-			<Route path="/doctorLogin">
-				<DoctorLogin />
-			</Route>
-			<Route path="/patientLogin">
-				<PatientLogin />
-			</Route>
-			<Route path="/signUp">
-				<LoginNav msg="signup" />
-				<Row mt="7">
-					<LoginCard
-						src={doctor_login}
-						msg="Welcome to Lambton Hospitals"
-					/>
-					<Col>
-						<h1>Sign Up</h1>
-						<SignUp />
-					</Col>
-				</Row>
-			</Route>
-		</>
-	);
+  return (
+    <>
+      <Route path="/adminLogin">
+        <AdminWelcome />
+      </Route>
+      <Route path="/doctorLogin">
+        <DoctorLogin />
+      </Route>
+      <Route path="/patientLogin">
+        <PatientLogin />
+      </Route>
+      <Route path="/signUp">
+        <LoginNav msg="signup" />
+        <Row mt="7">
+          <LoginCard src={doctor_login} msg="Welcome to Lambton Hospitals" />
+          <Col>
+            <h1>Sign Up</h1>
+            <SignUp />
+          </Col>
+        </Row>
+      </Route>
+    </>
+  );
 }

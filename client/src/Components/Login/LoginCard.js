@@ -1,5 +1,6 @@
 import { Card, CardBody, CardImg, CardTitle, Col } from "reactstrap";
 import admin from "../../assets/admin.png";
+
 export default function LoginCard({ role }) {
   return (
     <Col sm="12" md="4">
