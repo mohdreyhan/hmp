@@ -7,7 +7,7 @@ const EditRoom = () => {
   const [roomData, setRoomData] = useState();
   const { id } = useParams();
   const history = useHistory();
-  
+
   useEffect(() => {
     const getData = async () => {
       const {

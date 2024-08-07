@@ -143,7 +143,7 @@ function Patients() {
     <div>
       <div>
         <Row>
-          <Col className=" mt-3" style={{ margin: "auto", maxWidth: "1100px" }}>
+          <Col className=" mt-3" style={{ margin: "auto", maxWidth: "1500px" }}>
             <Input
               placeholder="Search..."
               type="text"
@@ -252,7 +252,7 @@ function Patients() {
                                 </>
                               )}
                             </>
-                            {/* <td>
+                            <td>
                             <Button
                               id={patient._id}
                               color="danger"
@@ -260,7 +260,7 @@ function Patients() {
                             >
                               Delete
                             </Button>
-                          </td> */}
+                          </td>
                           </tr>
                         );
                       })

@@ -7,11 +7,16 @@ import jwtDecode from "jwt-decode";
 
 const AdmittedPatients = () => {
   const [patients, setPatients] = useState([]);
+
   const [showTreatment, setShowTreatment] = useState(false);
   const [treatments, setTreatments] = useState([{ name: "", cost: "" }]);
   const [admissionId, setAdmissionId] = useState(null);
   const [patientId, setPatientId] = useState(null);
+
   const { role, _id } = jwtDecode(localStorage.getItem("token"));
+  
+  const history = useHistory();
+
   // if (role === "doctor") {
   //   setShowTreatment(true);
   // }
@@ -19,6 +24,8 @@ const AdmittedPatients = () => {
   //   role === "doctor" ? true : false
   // );
   // console.log(showTreatment);
+
+
   useEffect(() => {
     const getData = async () => {
       const {
@@ -28,12 +35,13 @@ const AdmittedPatients = () => {
     };
     getData();
   }, []);
-  const history = useHistory();
+
   const handleDischarge = async (e) => {
     const {
       data: { treatment },
     } = await axiosInstance.post("/treatement", treatments);
     // console.log(treatment);
+
     const {
       data: { admission },
     } = await axiosInstance.patch(`/patient/admit/${admissionId}`, {
@@ -44,11 +52,13 @@ const AdmittedPatients = () => {
       patient_id: patientId,
       admission_id: admissionId,
       discharge_date: new Date(),
+      insurance_id: admission.insurance_id
     });
 
     console.log(admission);
     history.push(`/patient/${patientId}`);
   };
+
   if (showTreatment) {
     return (
       <div>

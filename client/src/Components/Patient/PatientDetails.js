@@ -56,7 +56,7 @@ const PatientDetails = () => {
             </tbody>
           </Table>
         </Col>
-        {/* <h3>Bills</h3>
+        <h3>Bills</h3>
         <Col>
           <Table
             striped
@@ -91,7 +91,7 @@ const PatientDetails = () => {
               })}
             </tbody>
           </Table>
-        </Col> */}
+        </Col>
       </Row>
     </Container>
   );

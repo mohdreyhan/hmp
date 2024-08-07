@@ -23,13 +23,7 @@ const AddRoom = () => {
               <Label for="docname">Room Number</Label>
             </Col>
             <Col sm="8">
-              <Input
-                type="text"
-                name="room_no"
-                onChange={(e) =>
-                  setRoomData({ ...roomData, room_no: e.target.value })
-                }
-              />
+              <Input type="text" name="room_no" onChange={(e) => setRoomData({ ...roomData, room_no: e.target.value })} />
             </Col>
           </Row>
         </FormGroup>
@@ -42,9 +36,7 @@ const AddRoom = () => {
               <Input
                 type="number"
                 name="cost_per_day"
-                onChange={(e) =>
-                  setRoomData({ ...roomData, cost_per_day: e.target.value })
-                }
+                onChange={(e) => setRoomData({ ...roomData, cost_per_day: e.target.value })}
               />
             </Col>
           </Row>
@@ -55,13 +47,7 @@ const AddRoom = () => {
               <Label for="docname">Number of Beds</Label>
             </Col>
             <Col sm="8">
-              <Input
-                type="number"
-                name="no_of_beds"
-                onChange={(e) =>
-                  setRoomData({ ...roomData, no_of_beds: e.target.value })
-                }
-              />
+              <Input type="number" name="no_of_beds" onChange={(e) => setRoomData({ ...roomData, no_of_beds: e.target.value })} />
             </Col>
           </Row>
         </FormGroup>

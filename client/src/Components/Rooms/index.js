@@ -52,7 +52,7 @@ const Rooms = () => {
                       color="primary"
                       style={{ width: "100%" }}
                       id={room._id}
-                      // onClick={(e) => history.push(`/rooms/${e.target.id}`)}
+                      onClick={(e) => history.push(`/rooms/${e.target.id}`)}
                     >
                       View Patients
                     </Button>
@@ -69,7 +69,7 @@ const Rooms = () => {
                       Edit Room Details
                     </Button>
                   </td>
-                  {/* <td>
+                  <td>
                     <Button
                       color="danger"
                       style={{ width: "100%" }}
@@ -81,7 +81,7 @@ const Rooms = () => {
                     >
                       Delete
                     </Button>
-                  </td> */}
+                  </td>
                 </tr>
               );
             })}
